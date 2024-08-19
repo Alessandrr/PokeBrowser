@@ -8,7 +8,8 @@ export default tseslint.config(
     ...tseslint.configs.recommended,
     {
         "rules": {
-            "semi": 1
+            "semi": 1,
+            "no-unused-vars": 1
         }
     }
 );
