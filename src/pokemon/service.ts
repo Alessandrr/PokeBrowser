@@ -5,9 +5,8 @@ import { Pokemon } from "./pokemon";
 export async function getPokemon(name: string): Promise<Pokemon> {
     try {
         const response = await axios.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        const pokemonData = response.data;
 
-        return pokemonData;
+        return response.data;
     } catch (error: unknown) {
         if (!axios.isAxiosError(error)) {
             return Promise.reject(error);
@@ -36,4 +35,3 @@ function isPokemon(entity: unknown): entity is Pokemon {
 function isObject(entity: unknown): entity is Record<string, unknown> {
     return typeof entity === 'object' && entity != null;
 }
-
