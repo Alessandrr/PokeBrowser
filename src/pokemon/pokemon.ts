@@ -4,7 +4,7 @@ export type Pokemon = z.infer<typeof pokemonSchema>;
 
 const pokeApiNamedResourceSchema = z.object({
     name: z.string(),
-    url: z.string(),
+    url: z.string().url(),
 });
 
 const abilitySchema = z.object({
